@@ -1,71 +1,48 @@
 # A method to reverse the words in a sentence, in place.
 def reverse_sentence(my_sentence)
 
-  unless my_sentence.nil?
-    back_start = my_sentence.length - 1
-    back_end = back_start
+  reverse_words(my_sentence)
 
-    temp = []
-
-    while back_start >= 0
-      if back_start == 0 || my_sentence[back_start - 1] == ' '
-        (back_start..back_end).each do |index|
-          temp << my_sentence[index]
-        end
-        back_end = back_start - 1
-
-        while my_sentence[back_end] == ' ' && back_end >= 0
-          back_end -= 1
-          temp << ' '
-        end
-
-        back_start = back_end + 1
-
-      end
-      back_start -= 1
-    end
-
-    temp.each_with_index do |letter, index|
-      my_sentence[index] = letter
-    end
-  end
+  string_reverse(my_sentence)
 
 end
 
+# A method to reverse each word in a sentence, in place.
+def reverse_words(my_words)
+  word_index_start = 0
+  word_index_end = 0
+  while my_words != nil && word_index_end <= my_words.length
+    if my_words[word_index_end] == ' ' || word_index_end == my_words.length
+      front_index = word_index_start
+      back_index = word_index_end - 1
 
+      while front_index < back_index
+        temp = my_words[front_index]
+        my_words[front_index] = my_words[back_index]
+        my_words[back_index] = temp
+        front_index += 1
+        back_index -= 1
+      end
+      word_index_start = word_index_end + 1
+    end
 
+    word_index_end += 1
+  end
+end
 
+# A method to reverse a string in place.
+def string_reverse(my_string)
+  unless my_string == nil || my_string.empty? || my_string.length == 1
 
-  # spaces = 0
-  #
-  # while last_index != my_sentence.length
-  #   if my_sentence[last_index] == ' '
-  #     space_index = last_index
-  #     # start_index = last_index + 1
-  #     while space_index > 0
-  #       my_sentence[space_index] = my_sentence[space_index - 1]
-  #       space_index -= 1
-  #     end
-  #   end
-  #
-  #   if my_sentence[last_index] != ' ' && my_sentence[last_index-1] == ' '
-  #     start_index = last_index
-  #     while my_sentence[last_index] != nil || my_sentence[last_index] != ' '
-  #       last_index += 1
-  #     end
-  #
-  #     (last_index - start_index).times do
-  #       temp = my_sentence[last_index - 1]
-  #       move_times = last_index - 1
-  #       # last_index.times do |move|
-  #       while move_times > 0
-  #         my_sentence[move_times] = my_sentence[move_times - 1]
-  #         move_times -= 1
-  #       end
-  #     end
-  #   end
-  #
-  #
-  #   last_index += 1
+    index = 0
+    last = my_string.length - 1
 
-    # raise NotImplementedError
+    while index <= last
+      temp = my_string[index]
+      my_string[index] = my_string[last]
+      my_string[last] = temp
+      index += 1
+      last -= 1
+    end
+  end
+end
