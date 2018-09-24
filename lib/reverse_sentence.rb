@@ -1,5 +1,10 @@
 # A method to reverse the words in a sentence, in place.
 
+
+#space complexity: 0(1) or constant. As the size of the input changes, there is no need for added space. This is because we are updating the indices in place.
+
+#time complexity: 0(n). First, each character in my_words moves indices with the reverse_string method. This takes O(n) times because the loop runs n/2 times due to the fact that 2 variables get updated each time. Then my_words goes through the 'if' loop to determine the start and end of the word. This takes O(n) times where n is the length of the string. Finally, each word then goes through the reverse_words method. This method also takes O(n) times because it will scale proportionately with the length of the string. Therefore, the time complexity for this entire method is O(n).
+
 def reverse_sentence(my_sentence)
   # raise NotImplementedError
 
