@@ -1,4 +1,11 @@
 # A method to reverse the words in a sentence, in place.
+
+# Share and explain the time and space complexities for your solution.
+# Time complexity:
+# O(n) + O(n**2) + O(n)
+# Space complexity:
+# O(1)
+
 def string_reverse(my_string)
   return my_string if my_string.nil? || my_string == ""
   i = 0
