@@ -4,22 +4,6 @@ def reverse_sentence(my_sentence)
   return reverse_words(reversed_string)
 end
 
-def string_reverse(my_string)
-  while my_string != nil
-    i = 0
-    j = my_string.length - 1
-    while i < j
-      temp = my_string[i]
-      my_string[i] = my_string[j]
-      my_string[j] = temp
-      i += 1
-      j -= 1
-    end
-    return my_string
-  end
-  return nil
-end
-
 def reverse_words(my_words)
   if my_words == nil || my_words.length == 0
     return my_words
@@ -47,7 +31,7 @@ def find_next_space_index(string, i)
 end
 
 def string_reverse(my_string)
-  while my_string != nil
+  if my_string != nil
     i = 0
     j = my_string.length - 1
     while i < j
