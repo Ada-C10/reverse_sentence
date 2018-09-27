@@ -1,4 +1,11 @@
 #A method to reverse the words in a sentence, in place.
+# The time complexity:
+# The first iteration is done when the entire sentence is reversed.
+# The second iteration when the start and end indices are found.
+# The third time the iterations are (each_word.length)/2 times for reversing the word.
+# Since the iterations happen sequentially, the time complexity is O(n)
+#
+# The space complexity is O(1) as the sentence is reversed in place.
 def reverse_sentence(my_sentence)
   #Reverses a string that is passed
   def string_reverse(string, start_index, end_index)
