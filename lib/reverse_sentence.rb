@@ -12,36 +12,36 @@ def string_reverse(my_string, beginning, ending)
     front_index += 1
     back_index -= 1
   end
-
+  return my_string
 end
 
-def reverse_sentence(my_sentence)
-  return my_sentence if my_sentence == nil || my_sentence.length < 2
+def reverse_words(my_words)
+  return if my_words == nil
 
-  beginning = 0
-  ending = my_sentence.length - 1
+  i = 0
+  length = my_words.length
 
-  # Reverse entire string sentence
-  string_reverse(my_sentence, beginning, ending)
-  j = 0
-
-  while j < my_sentence.length
-
-    while my_sentence[j] == " "
-      j += 1
-    end
-
-    i = j
-
-    while my_sentence[j] != " " && my_sentence[j] != nil
-      j += 1
+  while i < length
+    while my_words[i] == ' ' && i < length
+      i += 1
     end
 
     beginning = i
-    ending = j - 1
 
-    # Loop through each word and reverse each string back to be readable
-    string_reverse(my_sentence, beginning, ending)
+    while my_words[i] != ' ' && i < length
+      i += 1
+    end
+
+    ending = i - 1
+
+    string_reverse(my_words, beginning, ending)
   end
-  return my_sentence
+  return my_words
+end
+
+
+def reverse_sentence(my_sentence)
+  return if my_sentence.nil? || my_sentence.length < 2
+  reverse_words(my_sentence)
+  string_reverse(my_sentence, 0, my_sentence.length - 1)
 end
