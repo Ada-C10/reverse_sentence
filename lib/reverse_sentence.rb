@@ -1,13 +1,13 @@
-def string_reverse(my_words, beginning, ending)
+def string_reverse(my_string, beginning, ending)
   front_index = beginning
   back_index = ending
 
   while front_index < back_index
-    front_value = my_words[front_index]
-    back_value = my_words[back_index]
+    front_value = my_string[front_index]
+    back_value = my_string[back_index]
 
-    my_words[front_index] = back_value
-    my_words[back_index] = front_value
+    my_string[front_index] = back_value
+    my_string[back_index] = front_value
 
     front_index += 1
     back_index -= 1
