@@ -45,3 +45,7 @@ def reverse_sentence(my_sentence)
   reverse_words(my_sentence)
   string_reverse(my_sentence, 0, my_sentence.length - 1)
 end
+
+# time complexity: O(n) - goes through the loop n times, in this case it is through the length of my_sentence
+
+# space complexity: O(1) - the storage doesn’t grow with the size of the input, stays constant with the length of the string, first with reverse_words method and then again stays the same in the string_reverse method.
