@@ -6,7 +6,6 @@ def string_reverse(my_words, beginning, ending)
     front_value = my_words[front_index]
     back_value = my_words[back_index]
 
-
     my_words[front_index] = back_value
     my_words[back_index] = front_value
 
