@@ -1,4 +1,3 @@
-require 'pry'
 def string_reverse(my_words, beginning, ending)
   front_index = beginning
   back_index = ending
@@ -22,7 +21,8 @@ def reverse_sentence(my_sentence)
 
   beginning = 0
   ending = my_sentence.length - 1
-  
+
+  # Reverse entire string sentence
   string_reverse(my_sentence, beginning, ending)
   j = 0
 
@@ -41,6 +41,7 @@ def reverse_sentence(my_sentence)
     beginning = i
     ending = j - 1
 
+    # Loop through each word and reverse each string back to be readable
     string_reverse(my_sentence, beginning, ending)
   end
   return my_sentence
