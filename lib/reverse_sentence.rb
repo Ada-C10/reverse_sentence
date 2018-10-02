@@ -6,8 +6,7 @@
 # Since the iterations happen sequentially, the time complexity is O(n)
 #
 # The space complexity is O(1) as the sentence is reversed in place.
-def reverse_sentence(my_sentence)
-  #Reverses a string that is passed
+# Reverses a string that is passed
   def string_reverse(string, start_index, end_index)
       index = 0
       length = end_index - start_index
@@ -20,6 +19,7 @@ def reverse_sentence(my_sentence)
       return string
   end
 
+def reverse_sentence(my_sentence)
   if my_sentence != nil && my_sentence.length >= 3
     length = my_sentence.length
 
