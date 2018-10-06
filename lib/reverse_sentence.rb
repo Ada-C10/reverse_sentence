@@ -43,3 +43,8 @@ def reverse_sentence(my_sentence)
 
   return my_sentence
 end
+
+# Time complexity: linear
+#  Given a sentence of length n, the time complexity is O(n). The sentence length is in direct proportion to the runtime.
+# Space complexity: constant
+#  The space complexity is O(1) because the string is changed in place.
