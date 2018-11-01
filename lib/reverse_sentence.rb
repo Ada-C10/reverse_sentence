@@ -1,16 +1,17 @@
 # A method to reverse the my_sentences in a sentence, in place.
 def reverse_sentence(my_sentence)
+
+  if my_sentence == nil || my_sentence == "" || my_sentence.length == 1
+     return my_sentence
+  end
   reverse_string(0, my_sentence.length - 1, my_sentence)
   i = 0
   s = 0
   e = 0
 
-  if my_sentence == nil
-    return my_sentence
-  end
     while i < my_sentence.length
       # skip space
-      if my_sentence[i + 1] == " " || my_sentence[i] == " "
+      while my_sentence[i + 1] == " " || my_sentence[i] == " "
         i += 1
       end
       # define start of sentence
