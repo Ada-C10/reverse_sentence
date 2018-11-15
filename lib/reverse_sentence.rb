@@ -1,4 +1,6 @@
 # A method to reverse the my_sentences in a sentence, in place.
+# Time: O(n^2)
+# Space: O(1)
 def reverse_sentence(my_sentence)
 
   if my_sentence == nil || my_sentence == "" || my_sentence.length == 1
@@ -20,6 +22,7 @@ def reverse_sentence(my_sentence)
       end
 
       # find end
+      # why does it go into an infinite loop with OR
       while my_sentence[i+1] != " " && my_sentence[i+1] != nil
         i += 1
       end
